@@ -16,5 +16,10 @@ namespace Tracker_UI
         {
             InitializeComponent();
         }
+
+        private void roundLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
