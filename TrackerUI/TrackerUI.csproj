@@ -64,6 +64,12 @@
     <Compile Include="CreateTeamForm.Designer.cs">
       <DependentUpon>CreateTeamForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TournamentDashBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TournamentDashBoardForm.Designer.cs">
+      <DependentUpon>TournamentDashBoardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TournamentViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TournamentDashBoardForm.resx">
+      <DependentUpon>TournamentDashBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TournamentViewerForm.resx">
       <DependentUpon>TournamentViewerForm.cs</DependentUpon>
     </EmbeddedResource>
