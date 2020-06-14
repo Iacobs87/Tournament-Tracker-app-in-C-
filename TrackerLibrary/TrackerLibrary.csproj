@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GloblaConfig.cs" />
+    <Compile Include="IDataConnection.cs" />
     <Compile Include="MatchupEntryModel.cs" />
     <Compile Include="MatchupModel.cs" />
     <Compile Include="PersonModel.cs" />

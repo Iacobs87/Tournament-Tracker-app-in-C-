@@ -27,8 +27,9 @@ namespace TrackerLibrary
         public string EmailAddress { get; set; }
 
         /// <summary>
-        /// The Primary cell phone number of the person
+        /// 
         /// </summary>
         public string CellphoneNumber { get; set; }
+
     }
 }
