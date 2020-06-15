@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace TrackerLibrary
 {
-    public interface IDataConnection
-    {
-        PrizeModel CreatePrize(PrizeModel model);
 
+    public enum DatabaseType
+    {
+        Sql,
+        TextFile
     }
+
+
 }
