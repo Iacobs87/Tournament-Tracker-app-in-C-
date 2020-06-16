@@ -30,7 +30,7 @@ namespace TrackerUI
                     prizePrecentageValue.Text);
 
                 
-                GloblaConfig.Connection.CreatePrize(model);
+                GlobalConfig.Connection.CreatePrize(model);
               
                 placeNameValue.Text = "";
                 placeNumberValue.Text = "";

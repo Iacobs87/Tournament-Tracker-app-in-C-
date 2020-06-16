@@ -8,7 +8,7 @@ using TrackerLibrary.DataAccess;
 
 namespace TrackerLibrary
 {
-    public static class GloblaConfig
+    public static class GlobalConfig
     {
         public static IDataConnection Connection { get; private set; }
 
