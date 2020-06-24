@@ -146,6 +146,7 @@ namespace TrackerUI
             tm.EnteredTeams = selectedTeams;
 
             // TODO - Wire our mathchups
+            TournamentLogic.CreateRounds(tm);
 
 
 
