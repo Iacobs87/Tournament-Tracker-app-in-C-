@@ -327,5 +327,18 @@ namespace TrackerLibrary.DataAccess
 
             return output;
         }
+
+        public void UpdateMatchup(MatchupModel model)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
+            { 
+                // spMatchups_Update @id, @WinnerId
+                var p = new DynamicParameters();
+                p.Add("@id", model.Id);
+                p.Add("@WinnerId", model.Winner.Id);
+           
+                connection.Execute("dbo.spMatchups_Update", p, commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }
