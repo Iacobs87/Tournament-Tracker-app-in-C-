@@ -140,6 +140,7 @@
             this.teamOneScoreValue.Name = "teamOneScoreValue";
             this.teamOneScoreValue.Size = new System.Drawing.Size(108, 43);
             this.teamOneScoreValue.TabIndex = 8;
+            this.teamOneScoreValue.TextChanged += new System.EventHandler(this.teamOneScoreValue_TextChanged);
             // 
             // teamTwoScoreValue
             // 

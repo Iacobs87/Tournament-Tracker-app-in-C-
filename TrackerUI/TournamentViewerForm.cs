@@ -159,8 +159,48 @@ namespace TrackerUI
             LoadMatchupList((int)roundDropDown.SelectedItem);
         }
 
+        private string ValidateData()
+        {
+            string output = "";
+
+            double teamOneScore = 0;
+            double teamTwoScore = 0;
+
+            bool scoreOneValid = double.TryParse(teamOneScoreValue.Text, out teamOneScore);
+            bool scoreTwoValid = double.TryParse(teamTwoScoreValue.Text, out teamTwoScore);
+
+            if(!scoreOneValid)
+            {
+                output = "The Score One Value is not a valid number";
+            }
+            else if (!scoreTwoValid)
+            {
+                output = "The Score Two Value is not a valid number";
+            }
+
+            else if (teamOneScore == 0 && teamTwoScore == 0)
+            {
+                output = "you did not enter a score for either team";
+            }
+
+            else if (teamOneScore == teamTwoScore)
+            {
+                output = "we do not allow ties in this app";
+            }
+
+            return output;
+
+        }
+
         private void scoreButton_Click(object sender, EventArgs e)
         {
+            string errorMessage = ValidateData();
+            if (errorMessage.Length > 0)
+            {
+                MessageBox.Show($"Input error: { errorMessage }");
+                return;
+            }
+
             MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
             double teamOneScore = 0;
             double teamTwoScore = 0;
@@ -222,6 +262,13 @@ namespace TrackerUI
             }
 
             LoadMatchupList((int)roundDropDown.SelectedItem);
+
+            GlobalConfig.Connection.UpdateMatchup(m);
+        }
+
+        private void teamOneScoreValue_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

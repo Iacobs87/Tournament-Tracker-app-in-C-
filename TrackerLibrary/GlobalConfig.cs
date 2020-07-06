@@ -23,14 +23,14 @@ namespace TrackerLibrary
         {
             if (db == DatabaseType.Sql)
             {
-                //TODO - Set up the SQL Connector properly
+                
                 SqlConnector sql = new SqlConnector();
                 Connection = sql;
             }
 
             else if (db == DatabaseType.TextFile)
             {
-                //TODO - Create the Text Connection
+                
                 TextConnector text = new TextConnector();
                 Connection = text;
             }
@@ -39,6 +39,10 @@ namespace TrackerLibrary
         public static string CnnString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+        }
+        public static string AppKeyLookup(string key)
+        {
+            return ConfigurationManager.AppSettings[key];
         }
 
     }
